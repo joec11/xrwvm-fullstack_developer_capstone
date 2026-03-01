@@ -115,3 +115,30 @@ docker-compose up
     - Deploy the senti_analyzer application on Code Engine:
 
     <pre>ibmcloud ce application create --name sentianalyzer --image us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer --registry-secret icr-secret --port 5000</pre>
+
+## CICD
+
+- Install the GitHub CLI (gh):
+
+<pre>
+sudo apt update
+sudo apt install gh
+</pre>
+
+- Authenticate GitHub CLI:
+
+<pre>
+gh auth login
+</pre>
+
+- Get the list of workflow runs:
+
+<pre>
+gh run list
+</pre>
+
+- Display detailed information about a specific workflow run:
+
+<pre>
+gh run view &lt;run-id&gt; --verbose
+</pre>
