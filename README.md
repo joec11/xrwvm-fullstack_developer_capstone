@@ -142,3 +142,42 @@ gh run list
 <pre>
 gh run view &lt;run-id&gt; --verbose
 </pre>
+
+## Build and Push Image to IBM Cloud Image Registry (ICR)
+
+- Delete previously persisting sessions:
+
+<pre>
+kubectl get deployments
+kubectl delete deployment dealership
+ibmcloud cr images
+ibmcloud cr image-rm us.icr.io/$MY_NAMESPACE/dealership:latest && docker rmi us.icr.io/$MY_NAMESPACE/dealership:latest
+</pre>
+
+- Export SN Labs namespace and print it on the console:
+
+<pre>
+MY_NAMESPACE=$(ibmcloud cr namespaces | grep sn-labs-)
+echo $MY_NAMESPACE
+</pre>
+
+- Perform a docker build:
+
+<pre>
+docker build -t us.icr.io/$MY_NAMESPACE/dealership .
+</pre>
+
+- Push the image to the container registry:
+
+<pre>
+docker push us.icr.io/$MY_NAMESPACE/dealership
+</pre>
+
+- Deploy the application:
+    - Create the deployment:
+
+    <pre>kubectl apply -f deployment.yaml</pre>
+
+    - Port-forwarding:
+
+    <pre>kubectl port-forward deployment.apps/dealership 8000:8000</pre>
