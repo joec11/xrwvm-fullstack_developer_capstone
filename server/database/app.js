@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax, strict */
 const express = require('express');
 const mongoose = require('mongoose');
 const fs = require('fs');

@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax, strict */
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;

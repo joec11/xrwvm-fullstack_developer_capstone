@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax, strict */
 const { Int32 } = require('mongodb');
 const mongoose = require('mongoose');
 
