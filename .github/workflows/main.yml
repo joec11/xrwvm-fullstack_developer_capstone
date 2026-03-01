@@ -55,8 +55,7 @@ jobs:
     - name: Set up JSHint configuration
       run: |
         echo "{
-          \"esversion\": 6,
-          \"esnext\": true,
+          \"esversion\": 2021,
           \"node\": true,
           \"strict\": true,
           \"undef\": true,
