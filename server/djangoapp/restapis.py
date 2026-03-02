@@ -58,6 +58,7 @@ def post_review(data_dict):
         print(f"Unexpected {err=}, {type(err)=}")
         print("Network exception occurred")
 
+
 def searchcars_request(endpoint, **kwargs):
     params = ""
     if (kwargs):
@@ -71,8 +72,8 @@ def searchcars_request(endpoint, **kwargs):
         # Call get method of requests library with URL and parameters
         response = requests.get(request_url)
         return response.json()
-    except:
-        # If any error occurs
+    except Exception as err:
+        print(f"Unexpected {err=}, {type(err)=}")
         print("Network exception occurred")
     finally:
         print("GET request call complete!")
