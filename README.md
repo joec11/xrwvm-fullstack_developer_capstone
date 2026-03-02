@@ -92,6 +92,26 @@ docker build . -t nodeapp
 docker-compose up
 </pre>
 
+## Build and Run the Car Inventory Back-End Service
+
+- Change to the cars inventory directory:
+
+<pre>
+cd /home/project/xrwvm-fullstack_developer_capstone/server/carsInventory
+</pre>
+
+- Build the Docker application:
+
+<pre>
+docker build . -t nodeapp
+</pre>
+
+- Run the server:
+
+<pre>
+docker-compose up
+</pre>
+
 ## IBM Code Engine
 
 - Create a new Code Engine project
